@@ -9,7 +9,7 @@ install_github("Arthurlee51/PCWST")
 ```
 
 ## Usage 
-pcwst_est(Y, scale)
+pcwst_est(Y, scale)\\
 pcwst_est_tune(Y_train, Y_valid, scaleVals)
 
 

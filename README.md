@@ -1,5 +1,5 @@
 # PCWST
-Pairwise comparison without stochastic transitivity, as proposed by Lee et al. (2025+)
+Pairwise comparisons without stochastic transitivity, as proposed by Lee et al. (2025+)
 
 To install this package in R, run the following commands:  
 

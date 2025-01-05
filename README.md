@@ -9,7 +9,6 @@ install_github("Arthurlee51/PCWST")
 ```
 
 ## Usage 
-Key Functions
 
 pcwst_est(): Performs parameter estimation given a pairwise comparison matrix.
 

@@ -9,7 +9,7 @@ Description: Estimation of pairwise comparison data wihout stochastic transitivi
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: Rcpp (>= 1.0.13),
+Imports: Rcpp (>= 1.0.12),
          expm,
          truncnorm
 LinkingTo: Rcpp

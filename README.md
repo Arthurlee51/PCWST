@@ -9,8 +9,9 @@ install_github("Arthurlee51/PCWST")
 ```
 
 ## Usage 
-pcwst_est(Y, scale)\\
-pcwst_est_tune(Y_train, Y_valid, scaleVals)
+Key Functions
+pcwst_est(): Performs parameter estimation given a pairwise comparison matrix.
+pcwst_est_tune(): Decide the scale parameter (Cn) using training and validation datasets.
 
 
 ## Brief description

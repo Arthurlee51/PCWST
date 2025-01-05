@@ -9,8 +9,8 @@ install_github("Arthurlee51/PCWST")
 ```
 
 ## Usage 
-Key Functions
-pcwst_est(): Performs parameter estimation given a pairwise comparison matrix.
+Key Functions\\
+pcwst_est(): Performs parameter estimation given a pairwise comparison matrix.\\
 pcwst_est_tune(): Decide the scale parameter (Cn) using training and validation datasets.
 
 

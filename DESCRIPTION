@@ -1,0 +1,16 @@
+Package: PCWST
+Type: Package
+Title: Pairwise Comparisons without Stochastic Transitivity
+Version: 0.1.0
+Authors@R: c(
+    person("Yunxiao", "Chen", role = "aut"),
+    person("Sze Ming", "Lee", email = "s.lee51@lse.ac.uk", role = c("aut", "cre")))
+Description: Estimation of pairwise comparison data wihout stochastic transitivity assumption.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: Rcpp (>= 1.0.13),
+         expm,
+         truncnorm
+LinkingTo: Rcpp
+RoxygenNote: 7.3.2

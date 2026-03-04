@@ -22,6 +22,8 @@ The PCWST package implements the estimator developed by Lee et al. (2025+), whic
 ?pcwst_est
 ?pcwst_est_tune
 ```
+## Workflow
+The Workflow folder contains the codes as well as the description of the workflow to obtain the numerical results in the article. Please refer to the README file in the folder for details.
 
 ## Reference 
 Sze Ming Lee and Yunxiao Chen. **Pairwise Comparisons without Stochastic Transitivity: Model, Theory and Applications**. 2025+. (manuscript)

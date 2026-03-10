@@ -3,7 +3,6 @@
 # --------------------------------------------------------------------------------
 
 # Load required libraries
-# Load required libraries
 library(expm)
 library(Rcpp)
 library(RcppEigen)
@@ -15,7 +14,7 @@ library(PCWST)
 source("support.R")
 sourceCpp("rcpp_support.cpp")
 
-#load data(ATP for HotS)
+#load data(ATP or HotS)
 example = "ATP"
 if(example =="ATP"){
   load("ATPdata.Rdata")
@@ -35,7 +34,7 @@ numScales <- 20
 scaleVals <- 10^seq(-1, 1, length.out = numScales)#Potential values of C\sqrt{2K} for comparison
 set.seed(123)
 nmethod <- 2
-#split_ratio <- 0.5 #ratio of training data. The rest is left as test data. #Tricky in the sense that missing rate is too high.
+#Split data
 ndata<- nrow(data)
 n_train <- round(ndata*0.5)
 n_valid <- round(ndata*0.2)#Number of items for validation
@@ -54,7 +53,7 @@ n_valid <- round(ndata*0.2)#Number of items for validation
   #Drop extreme data in training set. 
   data_train <- rm_extreme_data.func(data_train)
   
-  #Get Player and Player id from training data and form W. Note that it is different in each split.
+  #Get Player and Player id from training data and form W. 
   players_train <- unique(data_train$Winner)
   n_players_train  <- length(players_train)
   #Get W_train
@@ -66,7 +65,7 @@ n_valid <- round(ndata*0.2)#Number of items for validation
   data_valid_final <- data_valid[which(data_valid$Winner %in%  players_train & data_valid$Loser %in%  players_train),]
   #compute number of players removed 
   nremoved_valid <- nrow(data_valid) - nrow(data_valid_final)
-  #Now create W_test for easier analysis. Only consider players that appeared in te training set. Since otherwise the prediction is just 0.5
+  #Now create W_test for easier analysis. Only consider players that appeared in te training set.
   W_valid <- GetW.func(data_valid_final, n_players_train,   players_train )
   
   
@@ -75,7 +74,6 @@ n_valid <- round(ndata*0.2)#Number of items for validation
   out_full <- pcwst_est_tune(W_train, W_valid,scaleVals)
   end_time <- Sys.time()
   time_proposed <-  end_time -  start_time 
-  #out <- out_full$out
   scale <- out_full$scale
   valid_like <- out_full$valid_like
   
@@ -97,7 +95,7 @@ n_valid <- round(ndata*0.2)#Number of items for validation
   data_test_final <- data_test[which(data_test$Winner %in%  players_train & data_test$Loser %in%  players_train),]
   #compute number of players removed 
   nremoved <- nrow(data_test) - nrow(data_test_final)
-  #Now create W_test for easier analysis. Only consider players that appeared in te training set. Since otherwise the prediction is just 0.5
+  #Now create W_test for easier analysis. Only consider players that appeared in te training set.
   W_test <- GetW.func(data_test_final, n_players_train,   players_train )
   
 

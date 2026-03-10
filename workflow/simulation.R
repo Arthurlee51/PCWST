@@ -8,7 +8,6 @@ library(BradleyTerryScalable)
 library(PCWST)
 # Source supporting functions for simulations
  source("support.R")
-
 # Change data generation settings
 nsim <- 50 #nsim: number of simulations
 #Get results for different K, corresponding to ranks from 2 to 20. Use 1:10 to reproduce the results from simulations.

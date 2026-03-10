@@ -15,9 +15,6 @@ After generating the `.Rdata` files, the following scripts can be used to produc
 - **Figure 2**  
   - Run `figure2.R`. 
 
-
-## Real Data Analysis
-
 ## Real Data Analysis
 
 The real data analysis for both the ATP and HotS datasets can be reproduced by running `Data_analysis.R`. This script uses the processed datasets `ATPdata.Rdata` and `HotS.Rdata`.

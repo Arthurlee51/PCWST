@@ -1,5 +1,5 @@
 # PCWST
-Pairwise comparisons without stochastic transitivity, as proposed by Lee et al. (2025+)
+Pairwise comparisons without stochastic transitivity, as proposed by Lee and Chen (2025)
 
 To install this package in R, run the following commands:  
 
@@ -16,7 +16,7 @@ pcwst_est_tune(Y_train, Y_valid, scaleVals)
 
 
 ## Brief description
-The PCWST package implements the estimator developed by Lee et al. (2025+), which analyses models pairwise comparison data without the traditional stochastic transitivity assumption. The function pcwst_est() performs parameter estimation, given the matrix of comparison outcome Y, and the scale parameter (equivalent to Cn in the paper) that controls the nuclear norm of the parameter matrix. When the scale parameter is unknown and needs to be estimated, we can apply the function pcwst_est_tune() to choose scale from a range of possible values specified by the user, given training and validation data.
+The PCWST package implements the estimator developed by Lee and Chen (2025), which analyses models pairwise comparison data without the traditional stochastic transitivity assumption. The function pcwst_est() performs parameter estimation, given the matrix of comparison outcome Y, and the scale parameter (equivalent to Cn in the paper) that controls the nuclear norm of the parameter matrix. When the scale parameter is unknown and needs to be estimated, we can apply the function pcwst_est_tune() to choose scale from a range of possible values specified by the user, given training and validation data.
 
 ```R
 ?pcwst_est
@@ -24,6 +24,9 @@ The PCWST package implements the estimator developed by Lee et al. (2025+), whic
 ```
 ## Workflow
 The Workflow folder contains the codes as well as the description of the workflow to obtain the numerical results in the article. Please refer to the README file in the folder for details.
+
+## Figure 
+The Figure folder contains the figures reported in the article.
 
 ## Reference 
 Sze Ming Lee and Yunxiao Chen. **Pairwise Comparisons without Stochastic Transitivity: Model, Theory and Applications**. 2025+. (manuscript)

@@ -8,10 +8,7 @@ library(BradleyTerryScalable)
 library(PCWST)
 # Source supporting functions for simulations
  source("support.R")
-# source("functions_supp.R")
-# source("nuclear_est.R")
-# sourceCpp("Rcpp_functions.cpp")
-# sourceCpp("Rcpp_nuclear.cpp")
+
 # Change data generation settings
 nsim <- 50 #nsim: number of simulations
 #Get results for different K, corresponding to ranks from 2 to 20. Use 1:10 to reproduce the results from simulations.
@@ -77,7 +74,6 @@ for (K in 2:2){
         Totalloss_BT[z] <- loss.func(Pihat_BT,Pi_star,n)
       }
       
-      #Now generate test data and compute predictive likelihood
       #Save data 
       out <- list(Prposedtime = Prposedtime, BTtime = BTtime, Totalloss_BT =Totalloss_BT, Totalloss= Totalloss, objstore = objstore, niterstore = niterstore, exitstore = exitstore,  BTcoefstore=BTcoefstore, Pi_star = Pi_star ,Pihatstore = Pihatstore  )
       save(out, file = sprintf("slv%dnsim%dn%dK%d.Rdata",sparse_lv, nsim,n,K))

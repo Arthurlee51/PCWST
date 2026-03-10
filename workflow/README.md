@@ -12,7 +12,6 @@ After generating the `.Rdata` files, the following scripts can be used to produc
 
 - **Figure 1**  
   - Run `figure1.R`.
-  - 
 - **Figure 2**  
   - Run `figure2.R`. 
 

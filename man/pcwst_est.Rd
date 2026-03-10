@@ -27,7 +27,7 @@ set.seed(123)
 n=300
 K=2
 scale = 2*K
-parameters <- genpar.func(n, K)
-Y = gendata.func(T_max = parameters$T_max, Pi = parameters$Pi, n,  sparse_lv =1 )
+parameters <- pcwst_genpar.func(n, K)
+Y = pcwst_gendata.func(T_max = parameters$T_max, Pi = parameters$Pi, n,  sparse_lv =1 )
 result <-pcwst_est(Y,scale)
 }

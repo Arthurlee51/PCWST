@@ -9,7 +9,7 @@
 #' \item{T_max}{Maximum number of comparisons between any pair.}
 #'
 #' @export
-genpar.func <- function( n,  K) {
+pcwst_genpar.func <- function( n,  K) {
 #T_max: maximum number of comparisons
  T_max = 5
 
@@ -43,7 +43,7 @@ genpar.func <- function( n,  K) {
 #' @return  \item{Y}{Matrix of comparison outcome}
 #'
 #' @export
-gendata.func <- function(T_max,Pi,  n, sparse_lv) {
+pcwst_gendata.func <- function(T_max,Pi,  n, sparse_lv,test =FALSE) {
 #Set p_n and q_n, the min and max comparison rates relative to different sparse levels.
   sparse_lv_vec <- c(n^(-1)*log(n), n^(-1/2), 1/4)
   p_n <- sparse_lv_vec[sparse_lv]
@@ -55,6 +55,10 @@ gendata.func <- function(T_max,Pi,  n, sparse_lv) {
   #generate comparison rate pijs for each pair and number of comparisons nijs
   pijs<- runif(n_pairs,p_n,q_n )
   nijs <- rbinom(n_pairs,size = T_max,prob =  pijs)
+  #Further thin data if test = TRUE
+  if(test){
+    nijs <- rbinom(n_pairs,size = nijs,prob =  0.25)
+  }
 
   #Compute Y, the matrix of comparison results.
   Y <- matrix(0, nrow=n,ncol=n)

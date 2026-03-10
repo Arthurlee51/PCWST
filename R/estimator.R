@@ -21,9 +21,9 @@ NULL
 #' n=300
 #' K=2
 #' scaleVals =10^seq(-1, 1, length.out = 20)
-#' parameters = genpar.func(n, K)
-#' Y_train = gendata.func(T_max = parameters$T_max, Pi = parameters$Pi, n,  sparse_lv =1 )
-#' Y_valid = gendata.func(T_max = parameters$T_max, Pi = parameters$Pi, n,  sparse_lv =1 )
+#' parameters = pcwst_genpar.func(n, K)
+#' Y_train = pcwst_gendata.func(T_max = parameters$T_max, Pi = parameters$Pi, n,  sparse_lv =1 )
+#' Y_valid = pcwst_gendata.func(T_max = parameters$T_max, Pi = parameters$Pi, n,  sparse_lv =1 )
 #' result = pcwst_est_tune(Y_train,Y_valid, scaleVals)
 #'
 #' @export
@@ -70,8 +70,8 @@ pcwst_est_tune <- function(Y_train, Y_valid,scaleVals) {
 #' n=300
 #' K=2
 #' scale = 2*K
-#' parameters <- genpar.func(n, K)
-#' Y = gendata.func(T_max = parameters$T_max, Pi = parameters$Pi, n,  sparse_lv =1 )
+#' parameters <- pcwst_genpar.func(n, K)
+#' Y = pcwst_gendata.func(T_max = parameters$T_max, Pi = parameters$Pi, n,  sparse_lv =1 )
 #' result <-pcwst_est(Y,scale)
 #' @export
 pcwst_est <- function(Y,scale) {

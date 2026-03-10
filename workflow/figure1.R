@@ -5,7 +5,6 @@ library(dplyr)
 library(gridExtra)
 library(ggtext)
 
-data <- c()
 nsim <- 50
 nlong <- c(500, 1000, 1500, 2000)
 sparse_long <- c(1, 2, 3)
